@@ -12,8 +12,6 @@ df = pd.read_csv("Copy.csv")
 valid_test,test_set, train_set= np.split(df, [int(.0445*len(df)),int(.0896*len(df))])
 y_test = test_set['Winners']
 y_train = train_set['Winners']
-#X_train = train_set[['Year','Team1GP','WIN%_x','Team1PTS','Team1FGA','Team1FG%','Team13PA','Team13P%','Team1FTA','Team1FT%','Team1REB','Team1AST','Team1TOV','Team1STL','Team1BLK','Team1BLKA','Team1PF','Team1+/-','Team2GP','WIN%_y','Team2PTS','Team2FGA','Team2FG%','Team23PA','Team23P%','Team2FTA','Team2FT%','Team2REB','Team2AST','Team2TOV','Team2STL','Team2BLK','Team2BLKA','Team2PF','Team2+/-']]
-#X_test = test_set[['Year','Team1GP','WIN%_x','Team1PTS','Team1FGA','Team1FG%','Team13PA','Team13P%','Team1FTA','Team1FT%','Team1REB','Team1AST','Team1TOV','Team1STL','Team1BLK','Team1BLKA','Team1PF','Team1+/-','Team2GP','WIN%_y','Team2PTS','Team2FGA','Team2FG%','Team23PA','Team23P%','Team2FTA','Team2FT%','Team2REB','Team2AST','Team2TOV','Team2STL','Team2BLK','Team2BLKA','Team2PF','Team2+/-']]
 X_train = train_set[['Year','Team1FGA','Team1FG%','Team13PA','Team13P%','Team1REB','Team1TOV','Team1STL','Team2FGA','Team2FG%','Team23PA','Team23P%','Team2REB','Team2TOV','Team2STL']]
 X_test = test_set[['Year','Team1FGA','Team1FG%','Team13PA','Team13P%','Team1REB','Team1TOV','Team1STL','Team2FGA','Team2FG%','Team23PA','Team23P%','Team2REB','Team2TOV','Team2STL']]
 
