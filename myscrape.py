@@ -23,11 +23,5 @@ for year in years:
     tables = pd.concat(tables)
     games_data.append(tables)
 
-'''
-driver.close()
-#print(tables)
-tables = pd.concat(tables)
-tables.to_csv("mycsv.csv", index=False)
-'''
 mydf = pd.concat(games_data, axis=0)
 mydf.to_csv("mycsv.csv", index = False)
