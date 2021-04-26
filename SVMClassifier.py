@@ -13,15 +13,12 @@ valid_test,test_set, train_set= np.split(df, [int(.0445*len(df)),int(.0896*len(d
 test_set.to_csv("my.csv", encoding='utf-8')
 y_test = test_set['Winners']
 y_train = train_set['Winners']
-y_valid = valid_test['Winners']
 X_train = train_set[['Year','Team1FGA','Team1FG%','Team13PA','Team13P%','Team1REB','Team1TOV','Team1STL','Team2FGA','Team2FG%','Team23PA','Team23P%','Team2REB','Team2TOV','Team2STL']]
 X_test = test_set[['Year','Team1FGA','Team1FG%','Team13PA','Team13P%','Team1REB','Team1TOV','Team1STL','Team2FGA','Team2FG%','Team23PA','Team23P%','Team2REB','Team2TOV','Team2STL']]
-X_valid = valid_test[['Year','Team1FGA','Team1FG%','Team13PA','Team13P%','Team1REB','Team1TOV','Team1STL','Team2FGA','Team2FG%','Team23PA','Team23P%','Team2REB','Team2TOV','Team2STL']]
 
 sc_X = StandardScaler()
 X_train = sc_X.fit_transform(X_train)
 X_test = sc_X.fit_transform(X_test)
-X_valid = sc_X.fit_transform(X_valid)
 
 clf = SVC(gamma='scale',probability=True)
 clf.fit(X_train, y_train)
