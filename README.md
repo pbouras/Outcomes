@@ -1,3 +1,3 @@
 # Outcomes 
 Predicts nba games
-Using bacis machine learning technics
+using basic machine learning technics
