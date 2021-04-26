@@ -1,17 +1,3 @@
-'''
-from bs4 import BeautifulSoup
-import requests
-import pandas as pd
-import html5lib
-import pandas as pd
-import requests
-
-df = pd.read_html(requests.get('https://www.basketball-reference.com/leagues/NBA_2021_games-may.html').text, flavor="bs4")
-df = pd.concat(df)
-df.to_csv("new.csv", index=False)
-
-'''
-
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
@@ -34,7 +20,5 @@ for year in years:
         games_data.append(df)
 
 
-#mydf = pd.DataFrame([games_data])
 mydf = pd.concat(games_data, axis=0)
 mydf.to_csv("new.csv", index = False)
-#games_data.to_csv("new.csv", index=False)
